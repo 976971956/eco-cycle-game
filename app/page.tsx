@@ -4,18 +4,18 @@ import { CycleExplorer } from "./CycleExplorer";
 const systems = [
   {
     title: "让万物彼此需要",
-    body: "水脉、菌群、植被与兽群共享同一套资源。改变一个物种，整片土地都会回应。",
-    className: "system-card system-card--wide",
+    body: "水脉、菌群、植被与兽群共用一套资源。改变一个物种，整片土地都会回应。",
+    className: "system-card system-card--network",
   },
   {
     title: "选择何时介入",
     body: "修复不一定是答案。有时撤退、等待和放手，才能留下更坚韧的生态。",
-    className: "system-card system-card--quiet",
+    className: "system-card system-card--intervene",
   },
   {
     title: "带着记忆重生",
-    body: "每次循环都会保留物种适应、土壤变化与玩家选择，下一轮从来不是简单重置。",
-    className: "system-card system-card--accent",
+    body: "每次循环都会留下物种适应、土壤变化与玩家选择。下一轮从来不是简单重置。",
+    className: "system-card system-card--memory",
   },
 ];
 
@@ -23,6 +23,16 @@ export default function Home() {
   return (
     <main id="top">
       <section className="hero" aria-labelledby="hero-title">
+        <Image
+          className="hero-backdrop"
+          src="/eco-cycle-hero.webp"
+          alt="由繁茂森林、湿地和衰败土地构成的环形生态世界"
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="hero-scrim" aria-hidden="true" />
+
         <nav className="nav-shell" aria-label="主导航">
           <a className="brand" href="#top" aria-label="生态轮回首页">
             <span className="brand-mark" aria-hidden="true" />
@@ -38,49 +48,50 @@ export default function Home() {
           </a>
         </nav>
 
-        <div className="hero-grid">
+        <div className="hero-layout section-shell">
           <div className="hero-copy">
             <p className="eyebrow">生态策略生存游戏</p>
             <h1 id="hero-title">
               生态
-              <br />
               <span>轮回</span>
             </h1>
             <p className="hero-lede">
-              管理一颗活着的星球。繁盛、崩解、再生，每次终结都在改变下一次开始。
+              管理一颗活着的星球。每次终结，都在改变下一次开始。
             </p>
             <div className="hero-actions">
               <a className="button button--primary" href="#cycle">
-                探索循环
+                查看生态循环
               </a>
-              <a className="text-link" href="#world">
+              <a className="button button--ghost" href="#world">
                 进入世界
               </a>
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="游戏世界概念图">
-            <Image
-              src="/eco-cycle-hero.webp"
-              alt="由繁茂森林、湿地和衰败土地构成的环形生态世界"
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 66vw"
-            />
-            <div className="hero-visual-fade" aria-hidden="true" />
-          </div>
+          <aside className="hero-reading" aria-label="游戏核心体验">
+            <span>你的角色</span>
+            <strong>不是征服者</strong>
+            <p>观察。介入。承担后果。</p>
+          </aside>
         </div>
       </section>
 
+      <div className="cycle-marquee" aria-hidden="true">
+        <div>
+          <span>萌发</span><i>生长</i><span>共生</span><i>失衡</i><span>衰败</span><i>重生</i>
+          <span>萌发</span><i>生长</i><span>共生</span><i>失衡</i><span>衰败</span><i>重生</i>
+        </div>
+      </div>
+
       <section className="manifesto" id="world" aria-labelledby="world-title">
-        <div className="section-shell manifesto-grid">
+        <div className="section-shell manifesto-layout">
           <p className="manifesto-note">这个世界不等待命令</p>
           <h2 id="world-title">
             你不是自然的主人。
             <span>你只是循环中的一个变量。</span>
           </h2>
           <p className="manifesto-copy">
-            河流会改道，林地会老去，物种会迁徙。你的工作不是维持永恒的平衡，而是读懂变化，并决定什么值得延续。
+            河流会改道，林地会老去，物种会迁徙。读懂变化，然后决定什么值得延续。
           </p>
         </div>
       </section>
@@ -88,7 +99,7 @@ export default function Home() {
       <CycleExplorer />
 
       <section className="world-window" aria-labelledby="land-title">
-        <div className="world-image">
+        <div className="world-frame">
           <Image
             src="/eco-cycle-world.webp"
             alt="倒木、菌丝、溪流与新生树苗共同组成的森林生态"
@@ -99,7 +110,7 @@ export default function Home() {
         <div className="section-shell world-caption">
           <h2 id="land-title">每块土地都有后果</h2>
           <p>
-            倒下的树成为菌群的家，洪水带走旧土，也送来新的种子。世界会记录你的每次选择。
+            倒下的树成为菌群的家。洪水带走旧土，也送来新的种子。世界会记住你的每次选择。
           </p>
         </div>
       </section>
@@ -108,14 +119,23 @@ export default function Home() {
         <div className="section-shell">
           <div className="systems-heading">
             <h2 id="systems-title">培育关系，不是堆叠资源</h2>
-            <p>真正稳定的生态，不依赖单一强者，而依赖无数微小关系。</p>
+            <p>真正稳定的生态，依赖无数微小关系。</p>
           </div>
           <div className="systems-grid">
             {systems.map((system) => (
               <article className={system.className} key={system.title}>
-                <div className="system-ring" aria-hidden="true" />
-                <h3>{system.title}</h3>
-                <p>{system.body}</p>
+                {system.className.includes("network") && (
+                  <Image
+                    src="/eco-cycle-world.webp"
+                    alt="溪流、林木与菌群相互连接的生态环境"
+                    fill
+                    sizes="(max-width: 760px) 100vw, 66vw"
+                  />
+                )}
+                <div className="system-copy">
+                  <h3>{system.title}</h3>
+                  <p>{system.body}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -123,17 +143,16 @@ export default function Home() {
       </section>
 
       <section className="final-cta" id="wishlist" aria-labelledby="wishlist-title">
-        <div className="section-shell final-grid">
-          <div>
-            <p className="section-kicker">循环即将开始</p>
-            <h2 id="wishlist-title">让世界记住你的选择</h2>
-          </div>
-          <div className="final-action">
-            <p>Steam 商店页面正在准备中。发行入口开放后将在这里公布。</p>
-            <a className="button button--primary" href="#top">
-              回到生态
-            </a>
-          </div>
+        <div className="final-orbit" aria-hidden="true">
+          <span />
+        </div>
+        <div className="section-shell final-layout">
+          <p className="section-kicker">循环即将开始</p>
+          <h2 id="wishlist-title">让世界记住你的选择</h2>
+          <p>Steam 商店页面正在准备中。发行入口开放后将在这里公布。</p>
+          <a className="button button--primary" href="#top">
+            回到生态
+          </a>
         </div>
       </section>
 
