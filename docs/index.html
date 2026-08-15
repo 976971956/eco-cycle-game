@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>生态轮回 | 让世界记住每次选择</title>
+    <meta name="description" content="生态轮回是一款关于培育、失衡与重生的生态策略生存游戏。" />
+    <meta property="og:title" content="生态轮回 | 让世界记住每次选择" />
+    <meta property="og:description" content="管理一颗活着的星球，让每次终结改变下一次开始。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://976971956.github.io/eco-cycle-game/og.png" />
+    <meta property="og:url" content="https://976971956.github.io/eco-cycle-game/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <nav class="nav-shell" aria-label="主导航">
+          <a class="brand" href="#top" aria-label="生态轮回首页">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>生态轮回</span>
+          </a>
+          <div class="nav-links">
+            <a href="#world">世界</a>
+            <a href="#cycle">循环</a>
+            <a href="#gameplay">玩法</a>
+          </div>
+          <a class="nav-action" href="#wishlist">发行消息</a>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">生态策略生存游戏</p>
+            <h1 id="hero-title">生态<br /><span>轮回</span></h1>
+            <p class="hero-lede">管理一颗活着的星球。繁盛、崩解、再生，每次终结都在改变下一次开始。</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#cycle">探索循环</a>
+              <a class="text-link" href="#world">进入世界</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="游戏世界概念图">
+            <img src="./eco-cycle-hero.webp" alt="由繁茂森林、湿地和衰败土地构成的环形生态世界" />
+            <div class="hero-visual-fade" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto" id="world" aria-labelledby="world-title">
+        <div class="section-shell manifesto-grid">
+          <p class="manifesto-note">这个世界不等待命令</p>
+          <h2 id="world-title">你不是自然的主人。<span>你只是循环中的一个变量。</span></h2>
+          <p class="manifesto-copy">河流会改道，林地会老去，物种会迁徙。你的工作不是维持永恒的平衡，而是读懂变化，并决定什么值得延续。</p>
+        </div>
+      </section>
+
+      <section class="cycle-section" id="cycle" aria-labelledby="cycle-title">
+        <div class="section-shell cycle-grid">
+          <div class="cycle-copy">
+            <h2 id="cycle-title">没有失败，只有下一次适应</h2>
+            <p>四个阶段持续推动世界前进。选择一个阶段，查看生态如何回应。</p>
+            <div class="phase-tabs" role="tablist" aria-label="生态循环阶段">
+              <button type="button" role="tab" aria-selected="true" aria-controls="cycle-panel" id="cycle-tab-germinate" class="phase-tab is-active" data-phase="germinate">萌发</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="cycle-panel" id="cycle-tab-flourish" class="phase-tab" data-phase="flourish">繁盛</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="cycle-panel" id="cycle-tab-imbalance" class="phase-tab" data-phase="imbalance">失衡</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="cycle-panel" id="cycle-tab-renew" class="phase-tab" data-phase="renew">重生</button>
+            </div>
+          </div>
+
+          <div class="cycle-stage cycle-stage--germinate" id="cycle-panel" role="tabpanel" aria-labelledby="cycle-tab-germinate" tabindex="0">
+            <div class="cycle-orbit" aria-hidden="true">
+              <span class="orbit-core"></span>
+              <span class="orbit-trace orbit-trace--one"></span>
+              <span class="orbit-trace orbit-trace--two"></span>
+            </div>
+            <div class="cycle-panel-copy" aria-live="polite">
+              <p id="phase-signal">土壤正在苏醒</p>
+              <h3 id="phase-title">从一粒种子开始</h3>
+              <div id="phase-copy">塑造水源与土壤，让先锋植物扎根。微小的选择将决定整个群落的方向。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="world-window" aria-labelledby="land-title">
+        <div class="world-image">
+          <img src="./eco-cycle-world.webp" alt="倒木、菌丝、溪流与新生树苗共同组成的森林生态" loading="lazy" />
+        </div>
+        <div class="section-shell world-caption">
+          <h2 id="land-title">每块土地都有后果</h2>
+          <p>倒下的树成为菌群的家，洪水带走旧土，也送来新的种子。世界会记录你的每次选择。</p>
+        </div>
+      </section>
+
+      <section class="systems" id="gameplay" aria-labelledby="systems-title">
+        <div class="section-shell">
+          <div class="systems-heading">
+            <h2 id="systems-title">培育关系，不是堆叠资源</h2>
+            <p>真正稳定的生态，不依赖单一强者，而依赖无数微小关系。</p>
+          </div>
+          <div class="systems-grid">
+            <article class="system-card system-card--wide">
+              <div class="system-ring" aria-hidden="true"></div>
+              <h3>让万物彼此需要</h3>
+              <p>水脉、菌群、植被与兽群共享同一套资源。改变一个物种，整片土地都会回应。</p>
+            </article>
+            <article class="system-card system-card--quiet">
+              <div class="system-ring" aria-hidden="true"></div>
+              <h3>选择何时介入</h3>
+              <p>修复不一定是答案。有时撤退、等待和放手，才能留下更坚韧的生态。</p>
+            </article>
+            <article class="system-card system-card--accent">
+              <div class="system-ring" aria-hidden="true"></div>
+              <h3>带着记忆重生</h3>
+              <p>每次循环都会保留物种适应、土壤变化与玩家选择，下一轮从来不是简单重置。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="wishlist" aria-labelledby="wishlist-title">
+        <div class="section-shell final-grid">
+          <div>
+            <p class="section-kicker">循环即将开始</p>
+            <h2 id="wishlist-title">让世界记住你的选择</h2>
+          </div>
+          <div class="final-action">
+            <p>Steam 商店页面正在准备中。发行入口开放后将在这里公布。</p>
+            <a class="button button--primary" href="#top">回到生态</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer section-shell">
+        <a class="brand" href="#top" aria-label="返回生态轮回首页">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>生态轮回</span>
+        </a>
+        <p>一场关于适应、失衡与新生的生态策略游戏。</p>
+      </footer>
+    </main>
+  </body>
+</html>
